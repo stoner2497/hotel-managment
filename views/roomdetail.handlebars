@@ -1,0 +1,97 @@
+<section class="section-sub-banner awe-parallax bg-1">
+    <div class="awe-overlay"></div>
+    <div class="sub-banner">
+        <div class="container">
+            <div class="text text-center">
+                <h2>{{rooms.roomtype}}</h2>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- END / SUB BANNER -->
+
+<!-- ROOM DETAIL -->
+<section class="section-room-detail bg-white">
+    <div class="container">
+
+        <!-- DETAIL -->
+        <div class="room-detail">
+            <div class="row">
+                <div class="col-lg-9">
+
+                    <!-- LAGER IMGAE -->
+                    <div class="room-detail_img">
+                        <div class="room_img-item">
+                            <img src="../public/images/room/detail/lager/img-1.jpg" alt="">
+                            <h6></h6>
+                        </div>
+                        <div class="room_img-item">
+                            <img src="../public/images/room/detail/lager/img-2.jpg" alt="">
+
+                        </div>
+                        <div class="room_img-item">
+                            <img src="../public/images/room/detail/lager/img-3.jpg" alt="">
+
+                        </div>
+                        <div class="room_img-item">
+                            <img src="../public/images/room/detail/lager/img-5.jpg" alt="">
+
+                        </div>
+
+                    </div>
+                    <!-- END / LAGER IMGAE -->
+
+                    <!-- THUMBNAIL IMAGE -->
+                    <div class="room-detail_thumbs">
+                        <a href="#"><img src="../public/images/room/detail/img-2.jpg" alt=""></a>
+                        <a href="#"><img src="../public/images/room/detail/img-3.jpg" alt=""></a>
+                        <a href="#"><img src="../public/images/room/detail/img-4.jpg" alt=""></a>
+                        <a href="#"><img src="../public/images/room/detail/img-5.jpg" alt=""></a>
+                        <a href="#"><img src="../public/images/room/detail/img-6.jpg" alt=""></a>
+                        <a href="#"><img src="../public/images/room/detail/img-7.jpg" alt=""></a>
+                    </div>
+                    <!-- END / THUMBNAIL IMAGE -->
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <!-- FORM BOOK -->
+                    <div class="room-detail_book">
+
+                        <div class="room-detail_total">
+                            <img src="images/icon-logo.png" alt="" class="icon-logo">
+
+                            <h6>STARTING ROOM FROM</h6>
+
+                            <p class="price">
+                                <span class="amout">INR{{rooms.Price}}</span> /days
+                            </p>
+                        </div>
+                        {{#if user}}
+                        <form action="/reservation" method="GET">
+                            <div class="room-detail_form">
+                                <button type="submit" class="awe-btn awe-btn-13">Book Now</button>
+                            </div>
+                        </form>
+                        {{else}}
+                        <form action="/register" method="GET">
+                            <div class="room-detail_form">
+                                <button type="submit" class="awe-btn awe-btn-13">Register</button>
+                            </div>
+                        </form>
+                        {{/if}}
+                    </div>
+                    <!-- END / FORM BOOK -->
+
+                </div>
+            </div>
+        </div>
+        <!-- END / DETAIL -->
+
+        <!-- TAB -->
+
+    </div>
+</section>
