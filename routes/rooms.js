@@ -4,15 +4,20 @@ const mongoose = require("mongoose");
 
 require("../models/Rooms");
 const Rooms = mongoose.model("rooms");
-
+require('../models/Utility')
+const Utility = mongoose.model('utility')
 router.get("/", (req, res) => {
   Rooms.find({}).then(rooms => {
-    res
+    Utility.find({})
+     .then(utility => {
+      res
       .render("index", {
-        rooms: rooms
+        rooms: rooms,
+        utility:utility
       })
-      .catch(err => console.log(err));
-  });
+     })
+      
+  }).catch(err => console.log(err));
 });
 
 router.get("/rooms", (req, res) => {

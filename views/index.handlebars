@@ -43,43 +43,7 @@
 </section>
 <!-- END / BANNER SLIDER -->
 
-<!-- CHECK AVAILABILITY -->
-<section class="section-check-availability">
-    <div class="container">
-        <div class="check-availability">
-            <div class="row">
-                <div class="col-lg-3">
-                    <h2>CHECK AVAILABILITY</h2>
-                </div>
-                <div class="col-lg-9">
-                    <form id="ajax-form-search-room" action="http://envato.megadrupal.com/html/hillter/search_step_2.php"
-                        method="post">
-                        <div class="availability-form">
-                            <input type="text" name="arrive" class="awe-calendar from" placeholder="Arrival Date">
-                            <input type="text" name="departure" class="awe-calendar to" placeholder="Departure Date">
 
-                            <select class="awe-select" name="adults">
-                                <option>Adults</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                            <select class="awe-select" name="children">
-                                <option>Children</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                            <div class="vailability-submit">
-                                <button class="awe-btn awe-btn-13">FIND THE BEST RATE</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- END / CHECK AVAILABILITY -->
 
 <!-- ACCOMD ODATIONS -->
@@ -215,7 +179,7 @@
                         <h2 class="heading">ABOUT US</h2>
                         <span>We Are King in HOTEL WORLD</span>
 
-                        <a href="aboutus" class="awe-btn awe-btn-default">READ MORE</a>
+                        <a href="about" class="awe-btn awe-btn-default">READ MORE</a>
                     </div>
                 </div>
             </div>
@@ -244,18 +208,11 @@
                             Avalon's leading hotels with gracious island hospitality, thoughtful amenities and
                             distinctive .</p>
                         <ul>
-                            <li>Coffee maker</li>
-                            <li>25 inch or larger TV</li>
-                            <li>Cable/satellite TV channels</li>
-                            <li>AM/FM clock radio</li>
-                            <li>Voicemail</li>
-                            <li>Private concierge</li>
-                            <li>Oversized work desk</li>
-                            <li>Hairdryer</li>
-                            <li>Iron/ironing board upon request</li>
-                            <li>Dataport</li>
-                            <li>Phone access fees waived</li>
-                            <li>24-hour Concierge service</li>
+                            {{#each utility}}
+                            <li>{{Name}}</li>
+                            
+                            
+                            {{/each}}
                         </ul>
                     </div>
                 </div>

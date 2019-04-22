@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from envato.megadrupal.com/html/hillter/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Oct 2018 06:51:56 GMT -->
+
 
 <head>
     <meta charset="utf-8">
     <!-- TITLE -->
-    <title>Hillter - Hotel Booking HTML5 Template</title>
+    <title>Queens palace</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -14,7 +14,7 @@
 
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Hind:400,300,500,600%7cMontserrat:400,700' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- CSS LIBRARY -->
     <link rel="stylesheet" type="text/css" href="../../public/css/lib/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/lib/font-hilltericon.css">
@@ -28,10 +28,6 @@
     <!-- MAIN STYLE -->
     <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
 
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    <![endif]-->
     <script>
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
@@ -50,12 +46,21 @@
 
 <body>
     {{> _nav}}
+
     <div id="preloader">
         <span class="preloader-dot"></span>
     </div>
-
+    <div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+                {{> _err}}
+                <br>
+                <br>
     {{{ body }}}
-
+    </div>
     {{> _footer}}
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script type="text/javascript" src="../../public/js/lib/jquery-1.11.0.min.js"></script>
@@ -78,7 +83,7 @@
     <script type="text/javascript" src="../../public/js/lib/jquery.validate.min.js"></script>
     <!-- Custom jQuery -->
     <script type="text/javascript" src="../../public/js/scripts.js"></script>
-    <script>
+    {{!-- <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
@@ -88,7 +93,7 @@
 
         ga('create', 'UA-20585382-5', 'megadrupal.com');
         ga('send', 'pageview');
-    </script>
+    </script> --}}
 </body>
 
 </html>

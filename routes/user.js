@@ -61,6 +61,24 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.post('/email', (req,res) => {
+  let receiver = req.body.email
+  let subject = 'notification mail';
+  let description = 'you have been registerd for our hotel. if any offers will arrive you will be notified on this email'
+  require('../api/mail')(receiver,subject,description)
+  res.redirect('/')
+})
+
+
+router.post('/contact', (req,res) => {
+
+     let receiver = 'alpachandapa123@gmail.com'
+     let subject = 'feedback'
+     let description = req.body.Name + req.body.feedback  
+     require('../api/mail')(receiver,subject,description)
+     res.redirect('/')
+})
+
 router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success_msg", "you are logged out");

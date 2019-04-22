@@ -36,7 +36,23 @@
 
 
                 </div>
-
+                <div class="col-md-6 col-lg-5">
+                    <form action="contact" method="post">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                             <span class="input-group-text" id="basic-addon1">@</span>
+                             </div>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="Name" value="{{Name}}">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Feedback</span>
+                             </div>
+                            <textarea class="form-control" name="feedback" value="{{feedback}}" aria-label="Feddback"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </form>
+                </div>
 
 
             </div>

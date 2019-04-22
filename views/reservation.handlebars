@@ -7,7 +7,6 @@
             <div class="container">
                 <div class="text text-center">
                     <h2>RESERVATION</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing</p>
                 </div>
             </div>
 
@@ -20,100 +19,99 @@
         <div class="col-md-9 col-lg-9 col-md-offset-3 col-lg-offset-3">
 
             <div class="reservation_content">
+                {{#if book }}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">Booking Details</h5>
+                     <p class="card-text">Name:{{book.firstname}} {{book.lastname}}.</p>
+                     <p class="card-text">No of People: {{book.Adults}}</p>
+                     <p class="card-text">Room: {{book.room}}</p>
+                     <form action="/reservation/?_method=DELETE" method="POST">
+                        <button type="submit" rel="tooltip" class="btn btn-danger">
+                        Cancel Booking
+                       </button>
+                    </form>
+                     </div> 
+                </div>
 
+                {{else}}
                 <div class="reservation-billing-detail">
 
                     <h4>BILLING DETAILS</h4>
                     <hr>
+                    <form action="reservation" method="POST">
                     <div class="row">
                         <div class="col-sm-6">
-                            <input type="text" name="arrive" class="awe-calendar from" placeholder="Arrival Date">
-                            <input type="text" name="departure" class="awe-calendar to" placeholder="Departure Date">
+                            <input type="text" name="from" value="{{from}}" class="awe-calendar from" placeholder="Arrival Date">
+                            <input type="text" name="to" value="{{to}}" class="awe-calendar to" placeholder="Departure Date">
 
 
                         </div>
                         <div class="col-sm-6">
-                            <select class="awe-select" name="adults">
-                                <option>Adults</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                            <select class="awe-select" name="children">
-                                <option>Children</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
+                            
+                            <label>Adults<sup>*</sup></label>
+                            <input type="Number" class="input-text" name="Adults" value="{{Adults}}">
                         </div>
                     </div>
                     <hr>
-                    <label>Country <sup>*</sup></label>
-                    <select class="awe-select">
-                        <option>United Kingdom (Uk)</option>
-                        <option>Viet Nam</option>
-                        <option>Thai Lan</option>
-                        <option>China</option>
-                        <option>India</option>
-                    </select>
+                    {{!-- <label>Country <sup>*</sup></label>
+                    <select class="awe-select" name="Country" value="{{Country}}">
+                        <option value={{ United Kingdom}}>United Kingdom (Uk)</option>
+                        <option value="{{Viet Nam}}">Viet Nam</option>
+                        <option value="{{Thai Lan}}">Thai Lan</option>
+                        <option value="{{China}}">China</option>
+                        <option value="{{India}}">India</option>
+                    </select> --}}
 
                     <label>Room <sup>*</sup></label>
-                    <select class="awe-select">
-                        <option>United Kingdom (Uk)</option>
-                        <option>Viet Nam</option>
-                        <option>Thai Lan</option>
-                        <option>China</option>
-                        <option>India</option>
+                    <select class="awe-select" name="room" value={{room}}>
+                        {{#each rooms}}
+                        <option value="{{roomtype}}">{{roomtype}}</option>
+                        {{/each}}
                     </select>
 
                     <div class="row">
                         <div class="col-sm-6">
                             <label>First Name<sup>*</sup></label>
-                            <input type="text" class="input-text">
+                            <input type="text" class="input-text" name="firstname" value="{{firstname}}">
                         </div>
                         <div class="col-sm-6">
                             <label>Last Name<sup>*</sup></label>
-                            <input type="text" class="input-text">
+                            <input type="text" class="input-text" name="lastname" value="{{lastname}}">
                         </div>
                     </div>
 
-                    <label>Company Name</label>
-                    <input type="text" class="input-text">
-
                     <label>Address<sup>*</sup></label>
-                    <input type="text" class="input-text" placeholder="Street Address">
+                    <input type="text" class="input-text" placeholder="Street Address" value="{{Address1}}" name="Address1">
                     <br><br>
-                    <input type="text" class="input-text" placeholder="Apartment, suite, unit etc. (Optional)">
+                    <input type="text" class="input-text" placeholder="Apartment, suite, unit etc. (Optional)" name="Address2" value="{{Address2}}" >
 
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <label>Town / City<sup>*</sup></label>
-                            <input type="text" class="input-text">
+                            <input type="text" class="input-text" name="Town" value="{{Town}}">
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <label>Country<sup>*</sup></label>
-                            <input type="text" class="input-text">
+                            <input type="text" class="input-text" name="Country" value="{{Country}}">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-6">
                             <label>Email Address<sup>*</sup></label>
-                            <input type="text" class="input-text">
+                            <input type="email" class="input-text" value="{{email}}" name="email">
                         </div>
                         <div class="col-sm-6">
                             <label>Phone<sup>*</sup></label>
-                            <input type="text" class="input-text">
+                            <input type="text" class="input-text" value="{{phone}}" name="phone">
                         </div>
                     </div>
 
-
-                    <label>Order Notes</label>
-                    <textarea type="text" class="input-textarea" placeholder="Notes about your order, eg. special notes for delivery"></textarea>
-
-                    <button class="awe-btn awe-btn-13">PLACE ORDER</button>
+                    <button type="submit" class="awe-btn awe-btn-13">Book Rooms</button>
                 </div>
-
+                {{/if}}
+            </form>
             </div>
 
         </div>

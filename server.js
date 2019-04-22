@@ -4,6 +4,7 @@ const exhb = require("express-handlebars");
 const session = require("express-session");
 const mongoose = require("mongoose");
 const passport = require("passport");
+const methodOverride = require("method-override");
 const flash = require("connect-flash");
 const bodyParser = require("body-parser");
 const app = express();
@@ -55,6 +56,10 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(console.log(`mongodb connected`))
   .catch(err => console.log(err));
+
+
+  
+app.use(methodOverride("_method"));
 
 //setting middleware
 app.engine(

@@ -6,6 +6,10 @@ const Reserve = new Schema({
     type: String,
     required: true
   },
+  room: {
+    type:String,
+    required:true
+  },
   from: {
     type: Date,
     required: true
@@ -13,6 +17,13 @@ const Reserve = new Schema({
   to: {
     type: Date,
     required: true
+  },
+  Adults: {
+    type:Number,
+    required:true
+  },
+  Children: {
+    type:Number,
   },
 
   Country: {
@@ -27,9 +38,12 @@ const Reserve = new Schema({
     type: String,
     required: true
   },
-  Address: {
+  Address1: {
     type: String,
     required: true
+  },
+  Address2: {
+    type:String,
   },
   Town: {
     type: String,
